@@ -12,7 +12,10 @@ const MainScreen = () => {
   let nav = useNavigation();
   const show = ()=>
   {
-    nav.navigate('PreChat')
+    if(user !== '')
+    {
+      nav.navigate('PreChat')
+    }
   }
 
   return (

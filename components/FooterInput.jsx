@@ -1,10 +1,26 @@
-import { StyleSheet, Text, View,Button,TextInput } from 'react-native'
+import { StyleSheet, Text, View,Button,TextInput,Image } from 'react-native'
 import React, { useState } from 'react'
+import Attach from './Attach'
 
 const FooterInput = (props) => {
 
+  const[show,setShow] = useState(false)
+  const showIcons = ()=>
+  {
+    if(show == false)
+    {
+      return <Text onPress={()=>{setShow(!show)}} style={{width:'100%'}}>show</Text>
+    }
+    else
+    {
+      return <Attach/>
+    }
+  }
   return (
     <View style={styles.footer}>
+          <Text>
+            {showIcons()}
+          </Text>
           <TextInput 
           onChangeText={props.setCustomerChat} 
           value={props.customerChat}
@@ -35,7 +51,7 @@ const styles = StyleSheet.create({
         color:'green',
         borderRadius:10,
         fontWeight:'bold',
-        width:'70%',
+        width:'60%',
         height:50,
         paddingLeft:20,
         backgroundColor:'#f8f8ff',

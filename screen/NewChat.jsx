@@ -4,6 +4,7 @@ import userContext from '../usersContext'
 import { useNavigation } from '@react-navigation/native'
 import FooterInput from '../components/FooterInput'
 import Message from '../components/Message'
+import Photo from '../components/Photo'
 
 
 const NewChat = () => {
@@ -29,7 +30,6 @@ const NewChat = () => {
     {
       setCon([...con,{type: 'customer' , message: customerChat , time:hours + ':' + minutes}])
       setCustomerChat(null)
-
     }
   }
   const exit = ()=>
@@ -49,9 +49,13 @@ const NewChat = () => {
     {
       return <Message icon={styles.customerLogo} style={styles.customer} type={val.type} time={val.time}  val={val.message}/>
     }
-    else
+    else if(val.type === 'Bot')
     {
       return <Message icon={styles.botLogo} style={styles.bot} type={val.type} time={val.time}  val={val.message}/>
+    }
+    else if(val.type === 'photo')
+    {
+      return <Photo icon={styles.customerLogo} style={styles.customer} type={val.type} time={val.time}  val={val.message}/>
     }
     })
   }

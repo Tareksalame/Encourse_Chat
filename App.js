@@ -8,6 +8,7 @@ import NewChat from './screen/NewChat';
 import History from './screen/History';
 import {UsersProvider} from './usersContext'
 import ChatScreen from './screen/ChatScreen';
+import CameraPage from './screen/CameraPage';
 
 export default function App() {
 
@@ -25,6 +26,7 @@ export default function App() {
           <Stack.Screen name={"newChat"} component={NewChat}/>
           <Stack.Screen name={"history"} component={History}/>
           <Stack.Screen name={"chatScreen"} component={ChatScreen}/>
+          <Stack.Screen name={"camera"} component={CameraPage}/>
         </Stack.Navigator>
       </NavigationContainer>
       </UsersProvider>
